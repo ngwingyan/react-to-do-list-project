@@ -3,31 +3,31 @@ import React, { useState } from "react";
 function TodoForm(props) {
   const [input, setInput] = useState("");
 
-  const handleChange = (e) => {
-    setInput(e.target.value);
+  const change = (e) => {
+    setInput(e.target.value); // we set it to what we type in
   };
 
-  const handleSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
 
     props.onSubmit({
-      id: Math.floor(Math.random() * 5000),
+      id: Math.floor(Math.random() * 1000), //so that we do not get the same id
       text: input,
     });
 
     setInput("");
   };
   return (
-    <form className="todo-form" onSubmit={handleSubmit}>
+    <form className="todo-form" onSubmit={submit}>
       <input
         type="text"
-        placeholder="Add activity"
+        placeholder="Add an activity"
         value={input}
         name="text"
-        className="todo-input"
-        onChange={handleChange}
+        className="activity-input"
+        onChange={change}
       />
-      <button className="todo-btn">Add activity</button>
+      <button className="activity-btn">Add activity</button>
     </form>
   );
 }
