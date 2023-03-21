@@ -27,7 +27,7 @@ function Todo({
   }
   return activities.map((activity, index) => (
     <div
-      className={activity.isComplete ? "activity-row complete" : "activity-row"}
+      className={activity.isComplete ? "activity-row complete" : "activity-row"} // if true, then 'activity-row complete' else just 'activity-row'
       key={index}
     >
       <div key={activity.id} onClick={() => completeActivity(activity.id)}>

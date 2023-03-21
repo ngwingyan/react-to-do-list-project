@@ -7,7 +7,7 @@ import InspirationalQuote from "./components/InspirationalQuote";
 
 function App() {
   return (
-    <div className="activity-app">
+    <div className="todo-app">
       <TodoList />
       <InspirationalQuote className="test"/>
     </div>

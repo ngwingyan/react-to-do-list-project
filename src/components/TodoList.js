@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import InspirationalQuote from "./InspirationalQuote";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
@@ -10,25 +11,9 @@ function TodoList() {
     if (activity.text && activity.text.trim()) {
     }
 
-    // OLD CODE
-
-    // const addActivity = (activity) => {
-    //   if (!activity.text || /^\s*$/.test(activity.text)) {
-    //     return;
-    //   }
-
     const newActivities = [activity, ...activities];
-
     setActivities(newActivities);
   };
-
-  // OLD CODE
-
-  // const removeActivity = (id) => {
-  //   const removeArr = [...activities].filter((activity) => activity.id !== id);
-
-  //   setActivities(removeArr);
-  // };
 
   // 2. This code first finds the index of the activity to remove using the findIndex() method.
   // If the index is not -1, meaning the activity was found, it creates a copy of the activities array using the spread operator and removes the activity at the found index using the splice() method.
@@ -42,12 +27,6 @@ function TodoList() {
       setActivities(updatedActivities);
     }
   };
-
-  // OLD CODE
-  // const updateActivity = (activityId, newValue) => {
-  //   if (!newValue.text || /^\s*$/.test(newValue.text)) {
-  //     return;
-  //   }
 
   // 3. UPDATES ACTIVITY
 
@@ -89,6 +68,7 @@ function TodoList() {
   return (
     <div>
       <h1>Plans for Today</h1>
+      <InspirationalQuote />
       <TodoForm onSubmit={addActivity} />
       <Todo
         activities={activities}
