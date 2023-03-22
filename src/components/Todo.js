@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
-import { RiCloseCircleLine } from "react-icons/ri";
+import { AiFillCloseCircle } from "react-icons/ai";
 import { TiEdit } from "react-icons/ti";
 
 function Todo({
@@ -34,7 +34,8 @@ function Todo({
         {activity.text}
       </div>
       <div className="icons">
-        <RiCloseCircleLine
+        {/* <RiCloseCircleLine */}
+        <AiFillCloseCircle
           onClick={() => removeActivity(activity.id)}
           className="delete-icon"
         />
