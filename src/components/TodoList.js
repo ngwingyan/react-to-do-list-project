@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import InspirationalQuote from "./InspirationalQuote";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
