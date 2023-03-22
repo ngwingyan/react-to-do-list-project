@@ -68,6 +68,20 @@ body {
   padding-bottom: 32px;
 }
 
+blockquote {
+  margin: 25px 25px;
+}
+
+.activity-row {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 10px;
+}
+
+.quote {
+  margin-top: 25px;
+}
+
 h1 {
   margin: 32px 0;
   color: #fff;

@@ -34,11 +34,6 @@ function TodoList() {
     if (newValue.text && newValue.text.trim()) {
     }
 
-    // OLD CODE
-    // setActivities((prev) =>
-    //   prev.map((item) => (item.id === activityId ? newValue : item))
-    // );
-
     // This code uses the reduce() method to iterate over the previous array of activities and create a new array with the updated activity.
     // If the item's ID matches the activity ID, it pushes the new value into the accumulator array, otherwise it pushes the current item.
     // The initial value of the accumulator is an empty array [].
@@ -67,8 +62,6 @@ function TodoList() {
   };
   return (
     <div>
-      <h1>Plans for Today</h1>
-      <InspirationalQuote />
       <TodoForm onSubmit={addActivity} />
       <Todo
         activities={activities}
