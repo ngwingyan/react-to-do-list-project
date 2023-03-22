@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { TiEdit } from "react-icons/ti";
+import { AiOutlineEdit } from "react-icons/ai";
 
 function Todo({
   activities,
@@ -39,7 +39,7 @@ function Todo({
           onClick={() => removeActivity(activity.id)}
           className="delete-icon"
         />
-        <TiEdit
+        <AiOutlineEdit
           onClick={() => setEdit({ id: activity.id, value: activity.text })}
           className="edit-icon"
         />
