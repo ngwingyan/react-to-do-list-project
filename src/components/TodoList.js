@@ -10,9 +10,25 @@ function TodoList() {
     if (activity.text && activity.text.trim()) {
     }
 
+    // OLD CODE
+
+    // const addActivity = (activity) => {
+    //   if (!activity.text || /^\s*$/.test(activity.text)) {
+    //     return;
+    //   }
+
     const newActivities = [activity, ...activities];
+
     setActivities(newActivities);
   };
+
+  // OLD CODE
+
+  // const removeActivity = (id) => {
+  //   const removeArr = [...activities].filter((activity) => activity.id !== id);
+
+  //   setActivities(removeArr);
+  // };
 
   // 2. This code first finds the index of the activity to remove using the findIndex() method.
   // If the index is not -1, meaning the activity was found, it creates a copy of the activities array using the spread operator and removes the activity at the found index using the splice() method.
@@ -24,14 +40,26 @@ function TodoList() {
       const updatedActivities = [...activities];
       updatedActivities.splice(index, 1);
       setActivities(updatedActivities);
+      console.log(updatedActivities);
     }
   };
+
+  // OLD CODE
+  // const updateActivity = (activityId, newValue) => {
+  //   if (!newValue.text || /^\s*$/.test(newValue.text)) {
+  //     return;
+  //   }
 
   // 3. UPDATES ACTIVITY
 
   const updateActivity = (activityId, newValue) => {
     if (newValue.text && newValue.text.trim()) {
     }
+
+    // OLD CODE
+    // setActivities((prev) =>
+    //   prev.map((item) => (item.id === activityId ? newValue : item))
+    // );
 
     // This code uses the reduce() method to iterate over the previous array of activities and create a new array with the updated activity.
     // If the item's ID matches the activity ID, it pushes the new value into the accumulator array, otherwise it pushes the current item.
@@ -61,12 +89,14 @@ function TodoList() {
   };
   return (
     <div>
+      
       <TodoForm onSubmit={addActivity} />
       <Todo
-        activities={activities}
+        activities={activities} 
         completeActivity={completeActivity}
         removeActivity={removeActivity}
         updateActivity={updateActivity}
+        setActivities={setActivities}
       />
     </div>
   );
