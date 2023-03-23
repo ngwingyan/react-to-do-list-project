@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const TimeDisplay = () => {
+const DateDisplay = () => {
   const [dateData, setDateData] = useState(null);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const TimeDisplay = () => {
   )
 };
 
-export default TimeDisplay;
+export default DateDisplay;
