@@ -44,114 +44,167 @@
 }
   */
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(90deg, black 0%, rgba(100, 115, 255, 1) 100%);
+  }
 
-body {
-  background: linear-gradient(90deg, black 0%, rgba(100, 115, 255, 1) 100%);
-}
-.todo-app {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 520px;
-  min-height: 600px;
-  background: blueviolet;
-  text-align: center;
-  margin: 128px auto;
-  border-radius: 10px;
-  padding-bottom: 32px;
-}
+  .todo-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 520px;
+    min-height: 600px;
+    background: blueviolet;
+    text-align: center;
+    margin: 128px auto;
+    border-radius: 10px;
+    padding-bottom: 32px;
+  }
+  
+  blockquote {
+    margin: 25px 25px;
+  }
+  
+  .activity-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px;
+  }
+  
+  .quote {
+    margin-top: 25px;
+  }
+  
+  h1 {
+    margin: 32px 0;
+    color: #fff;
+    font-size: 40px;
+  }
+  
+  .complete {
+    text-decoration: line-through;
+    opacity: 0.4;
+  }
+  
+  .todo-form {
+    margin-bottom: 32px;
+  }
+  
+  .activity-input {
+    margin-top: 10px;
+    padding: 14px 32px 14px 16px;
+    border-radius: 4px 0 0 4px;
+    border: 2px solid #5d0cff;
+    outline: none;
+    width: 320px;
+    background: white;
+    color: black;
+  }
+  
+  .activity-input::placeholder {
+    color: #fff;
+  }
+  
+  .activity-btn {
+    padding: 16px;
+    margin-top: 4px 4px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+    background: #5d0cff;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  
+  .activity-input.edit {
+    border: 7px solid #149fff;
+  }
+  
+  .activity-btn.edit {
+    background: linear-gradient(90deg, blue 100%, /* blueviolet 100% */);
+    padding: 16px 22px;
+  }
+  
+  .todo-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+  
+  .icons {
+    display: flex;
+    margin-left: 3px;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .delete-icon {
+    margin-right: 5px;
+    color: red;
+  }
+  
+  .edit-icon {
+    color: blue;
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
 
-blockquote {
-  margin: 25px 25px;
-}
-
-.activity-row {
-  display: flex;
-  justify-content: flex-start;
-  margin: 10px 10px;
-}
-
-.quote {
-  margin-top: 25px;
-}
-
-h1 {
-  margin: 32px 0;
-  color: #fff;
-  font-size: 40px;
-}
-
-.complete {
-  text-decoration: line-through;
-  opacity: 0.4;
-}
-
-.todo-form {
-  margin-bottom: 32px;
-}
-
-.activity-input {
-  margin-top: 10px;
-  padding: 14px 32px 14px 16px;
-  border-radius: 4px 0 0 4px;
-  border: 2px solid #5d0cff;
-  outline: none;
-  width: 320px;
-  background: white;
-  color: black;
-}
-
-.activity-input::placeholder {
-  color: #fff;
-}
-
-.activity-btn {
-  padding: 16px;
-  margin-top: 4px 4px;
-  border: none;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  outline: none;
-  background: #5d0cff;
-  color: #fff;
-  text-transform: capitalize;
-}
-
-.activity-input.edit {
-  border: 7px solid #149fff;
-}
-
-.activity-btn.edit {
-  background: linear-gradient(90deg, blue 100%, /* blueviolet 100% */);
-  padding: 16px 22px;
-}
-
-.todo-container {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
-
-.icons {
-  display: flex;
-  margin-left: 3px;
-  align-items: center;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.delete-icon {
-  margin-right: 5px;
-  color: #fff;
-}
-
-.edit-icon {
-  color: #fff;
-}
+  .card button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .activity-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* .delete-icon {
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .edit-icon {
+    font-size: 20px;
+    color: blue;
+    cursor: pointer;
+  } */
+  
