@@ -9,7 +9,9 @@ provide users with inspirational quotes to help ease their minds.
 
 As a busy professional, I want to have a to-do list app that will allow 
 me to keep track of my daily tasks and prioritize them based on their 
-importance. I also want the app to provide me with an easy way to view all my tasks in one place, so that I can create new tasks quickly, assign 
+importance. 
+
+I also want the app to provide me with an easy way to view all my tasks in one place, so that I can create new tasks quickly, assign 
 due dates and reminders, and categorize them based on their type or 
 urgency. 
 
@@ -19,6 +21,27 @@ Finally, I would appreciate some motivational quotes or inspirational messages t
 
 
 ## Feature and site preview
+
+- On the initial page, it shows an inspirational quote from ZenQuote API and today's date from Worldtime API in UK format, and a text field to enter the task
+![screenshot](./screenshot/1-InitialPage.png)
+
+- How it looks when an activity is added -
+![screenshot](./screenshot/2-AddActivity.png)
+
+- When more tasks are added -
+![screnshot](./screenshot/3-MoreTasks.png)
+
+- When edit button is pressed -
+![screenshot](./screenshot/4-EditButton.png)
+
+- After editing the task - 
+![screnshot](./screenshot/5-afterEdit.png)
+
+- After drag and drop tasks
+![screenshot](./screenshot/6-afterDnD.png)
+
+- After deleting the task
+![screenshot](./screenshot/7-afterDelete.png)
 
 
 ## Usage
@@ -33,7 +56,7 @@ React, Node.js, GET, Netlify, react-icons, react-dnd, zenquotes API, Worldtime A
 ## Future Development
 
 * Ability to assign due dates and reminders
-* categorize them based on their type or urgency. 
+* Categorize them based on their type or urgency. 
 * Mark completed tasks as done and provide a satisfying visual feedback.
 * Integrate with calendar or send reminders for upcoming tasks via email or notifications on  mobile device.
 
