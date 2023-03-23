@@ -1,37 +1,36 @@
-import { useRef } from 'react'
-import { useDrag, useDrop } from 'react-dnd'
-import { ItemTypes } from './ItemTypes.js'
+import { useRef } from "react"
+import { useDrag, useDrop } from "react-dnd"
+import { ItemTypes } from "./ItemTypes.js"
 import { AiFillCloseCircle } from "react-icons/ai";
 import { AiOutlineEdit } from "react-icons/ai";
 
 // code from React DND sample //
 
 const style = {
-    width: "80%", 
+    width: "80%",
     height: "70%",
-    margin: '8px',
-    background: 'white',
-    boxShadow: '0px 3px 15px rgba(0, 0, 0, 0.2)',
-    borderRadius: '4px',
-    display: 'flex-center',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '8px',
-  };
-  
+    margin: "8px",
+    background: "white",
+    boxShadow: "0px 3px 15px rgba(0, 0, 0, 0.2)",
+    borderRadius: "4px",
+    display: "flex-center",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "8px",
+};
 
+// with help from the instructional staff we can successfully implement the drag and drop libraries taken from samples in our app
 export const Card = ({ id, text, index, moveCard, activity, completeActivity, removeActivity, setEdit }) => {
     const ref = useRef(null);
 
+    // adding to handler function inside callback to bring back the setEdit and removeActivit function from TodoList.js
     const handleEdit = () => {
         setEdit({ id, text });
     };
 
     const handleRemove = () => {
         removeActivity(id);
-      };
-      
-
+    };
 
     const [{ handlerId }, drop] = useDrop({
         accept: ItemTypes.CARD,
@@ -46,11 +45,11 @@ export const Card = ({ id, text, index, moveCard, activity, completeActivity, re
             }
             const dragIndex = item.index
             const hoverIndex = index
-            // Don't replace items with themselves
+            // Not replace items with themselves
             if (dragIndex === hoverIndex) {
                 return
             }
-            // Determine rectangle on screen
+            // Determine draggable/droppable area on screen
             const hoverBoundingRect = ref.current?.getBoundingClientRect()
             // Get vertical middle
             const hoverMiddleY =
@@ -72,10 +71,6 @@ export const Card = ({ id, text, index, moveCard, activity, completeActivity, re
             }
             // Time to actually perform the action
             moveCard(dragIndex, hoverIndex)
-            // Note: we're mutating the monitor item here!
-            // Generally it's better to avoid mutations,
-            // but it's good here for the sake of performance
-            // to avoid expensive index searches.
             item.index = hoverIndex
         },
     })
@@ -95,9 +90,12 @@ export const Card = ({ id, text, index, moveCard, activity, completeActivity, re
 
     return (
         <div ref={ref} style={{ ...style, opacity }} data-handler-id={handlerId}>
-            
-            <div className="activity-row" key={index}>
-            
+
+            <div
+                className={activity.isComplete ? "activity-row complete" : "activity-row"} // if true, then "activity-row complete" else just "activity-row"
+                key={index}
+            >
+
                 <div key={activity.id} onClick={() => completeActivity(activity.id)}>
                     {activity.text}
                 </div>
@@ -112,7 +110,7 @@ export const Card = ({ id, text, index, moveCard, activity, completeActivity, re
                         className="edit-icon"
                     />
                 </div>
-                
+
             </div>
         </div>
     )

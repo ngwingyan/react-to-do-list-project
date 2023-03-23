@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import TodoForm from "./TodoForm";
 import Card from "./Card";
-import update from 'immutability-helper';
+import update from "immutability-helper";
 
 function Todo({
     activities,
@@ -47,12 +47,12 @@ function Todo({
                 text={card.text}
                 moveCard={moveCard}
                 completeActivity
-                setEdit={setEdit}
-                removeActivity={removeActivity}
+                setEdit={setEdit} // need to add dependency to be called in other functions
+                removeActivity={removeActivity} // need to add dependency to be called in other functions
             />
 
         )
-    }, [moveCard, removeActivity])
+    }, [moveCard, removeActivity]) // dependencies from Todolist/Card.js
 
     if (edit.id) {
         return <TodoForm edit={edit} onSubmit={submitUpdate} />;
