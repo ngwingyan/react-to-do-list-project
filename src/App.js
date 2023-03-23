@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import TodoList from "./components/TodoList";
 import DateDisplay from "./components/Date"
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import InspirationalQuote from "./components/InspirationalQuote";
 
 function App () {
